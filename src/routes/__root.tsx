@@ -1,44 +1,11 @@
-import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
-import { AuthProvider } from "@/lib/auth/provider";
-import { PreviewHostBridge } from "@/components/preview-host-bridge";
-import appCss from "../styles.css?url";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 
 const APP_NAME = "NihongoBrain";
 
+// Document <head> (title, meta, fonts, manifest) now lives in index.html.
+// The Grok-only AuthProvider and PreviewHostBridge wrappers were removed in M0.
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NihongoBrain — เลิกท่องจำ แล้วสมองจะจำเอง" },
-      { name: "description", content: "เรียนภาษาญี่ปุ่นด้วยภาพ เรื่องราว และสี ไม่ต้องท่องจำ" },
-      { name: "theme-color", content: "#7EBE9A" },
-    ],
-    links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "stylesheet", href: appCss },
-      { rel: "manifest", href: "/__grok/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Noto+Sans+JP:wght@500&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap",
-      },
-    ],
-  }),
-  component: () => (
-    <html lang="th" suppressHydrationWarning>
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <PreviewHostBridge />
-        <AuthProvider>
-          <Outlet />
-        </AuthProvider>
-        <Scripts />
-      </body>
-    </html>
-  ),
+  component: () => <Outlet />,
 });
 
 export { APP_NAME };
