@@ -1,0 +1,39 @@
+{
+  "url": "http://127.0.0.1:8080/journey/kana-palace/lesson/a",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "NihongoBrain — เลิกท่องจำ แล้วสมองจะจำเอง",
+      "hasCanvas": true,
+      "bodyTextLen": 1027,
+      "bodyTextHash": "97f772e653d8a82d8bb21138b15d3d89ed9724ea86b24aeb76f2372d6fbc7fdd",
+      "bodyTextPrefix": "NihongoBrain เลิกท่องจำ แล้วสมองจะจำเอง หน้าแรก เรียน สมองฉัน 12",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/kana-lesson.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "NihongoBrain — เลิกท่องจำ แล้วสมองจะจำเอง",
+      "hasCanvas": true,
+      "bodyTextLen": 1000,
+      "bodyTextHash": "9fc5f5934a68c87caa5dceb5b75ffed4da4be9b3c1fe16d52a2950b1cead8aae",
+      "bodyTextPrefix": "NihongoBrain 12 เรียนต่อ Kana Palace 0/4 บทผ่านแล้ว 1.1 สระพื้นฐ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/kana-lesson-mobile.png"
+    }
+  },
+  "brandWarnings": [
+    "BRAND WARNING: this looks like a game/canvas app but src/lib/og/site.json is missing \"type\": \"x:game\". X uses og:type=x:game to present the unfurl as a game card — set it in /workspace/src/lib/og/site.json per /workspace/.grok/skills/og/SKILL.md. Do not invent x:type or overload twitter:card as the game signal.",
+    "BRAND WARNING: this looks like a game/canvas app but /workspace/public/x-banner.jpg is missing. Games need a 50:11 X feed card (1200×264 JPEG) at public/x-banner.jpg — open /workspace/.grok/skills/og/SKILL.md and finish the brand-asset pass."
+  ],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/kana-lesson.json"
+}

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8081/journey/kana-palace/lesson/a",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "NihongoBrain — เลิกท่องจำ แล้วสมองจะจำเอง",
+      "hasCanvas": false,
+      "bodyTextLen": 1029,
+      "bodyTextHash": "483efbcc0365d3af43a7810f34f31a5e6ba7332bec2a144bc4c47e630edee34e",
+      "bodyTextPrefix": "NihongoBrain เลิกท่องจำ แล้วสมองจะจำเอง หน้าแรก เรียน สมองฉัน 12",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/kana-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "NihongoBrain — เลิกท่องจำ แล้วสมองจะจำเอง",
+      "hasCanvas": false,
+      "bodyTextLen": 1002,
+      "bodyTextHash": "bed52a526ac6c1c9085b2ef9c7d9dacd8d4abf9d7ad735a7bcae18bd37c33072",
+      "bodyTextPrefix": "NihongoBrain 12 เรียนต่อ Kana Palace 0/4 บทผ่านแล้ว 1.1 สระพื้นฐ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/kana-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/kana-built.json"
+}
