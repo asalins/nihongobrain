@@ -14,6 +14,10 @@ const rec = (id, ok, detail = "") => {
 
 const ctx = await browser.newContext({ viewport: { width: 360, height: 780 }, hasTouch: true });
 const page = await ctx.newPage();
+const logs = [];
+page.on("console", (m) => logs.push(`${m.type()}: ${m.text()}`));
+page.on("pageerror", (e) => logs.push(`pageerror: ${e.message}`));
+page.on("requestfailed", (r) => logs.push(`requestfailed: ${r.url()} ${r.failure()?.errorText}`));
 
 // Manifest and icons
 const manifestRes = await page.request.get(BASE + "/manifest.webmanifest");
@@ -51,7 +55,7 @@ for (const path of ["/", "/journey/kana-palace", "/journey/kana-palace/lesson/a"
     ok = h1.length > 0 && imgs.every(Boolean);
     detail = `h1="${h1.slice(0, 30)}" images=${imgs.length} allLoaded=${imgs.every(Boolean)}`;
   } catch (e) {
-    detail = String(e).slice(0, 120);
+    detail = String(e).slice(0, 120) + ` | body="${(await page.locator("body").innerText().catch(() => "")).slice(0, 60)}" | logs=${logs.slice(-6).join(" ; ")}`;
   }
   rec(`OFFLINE ${path}`, ok, detail);
 }

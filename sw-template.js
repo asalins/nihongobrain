@@ -24,9 +24,10 @@ self.addEventListener("fetch", (event) => {
 
   // Page navigations: network first so new deploys show up, fall back to the cached app shell offline.
   if (req.mode === "navigate") {
-    event.respondWith(fetch(req).catch(() => caches.match("/index.html")));
+    event.respondWith(fetch(req).catch(() => caches.match("/index.html", { ignoreVary: true })));
     return;
   }
-  // Static files: cache first.
-  event.respondWith(caches.match(req).then((hit) => hit || fetch(req)));
+  // Static files: cache first. ignoreVary: servers send "Vary: Origin", and module
+  // scripts carry an Origin header that the precache requests did not have.
+  event.respondWith(caches.match(req, { ignoreVary: true }).then((hit) => hit || fetch(req)));
 });
